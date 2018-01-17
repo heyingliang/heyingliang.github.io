@@ -8,5 +8,19 @@
 </head>
 <body>
 	<div class="test">当前颜色</div>
+	<script type="text/javascript">
+	window.onload = function(){
+		var ajax = new XMLHttpRequest();
+		ajax.onreadystatechange = function(){
+			if (ajax.readyState == 4) {
+				if (ajax.status == 200) {
+					console.log(ajax.responseText);
+				}
+			}
+		};
+		ajax.open("GET", "/test.php",true);
+		ajax.send();
+	};
+	</script>
 </body>
 </html>
