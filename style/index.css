@@ -1,0 +1,76 @@
+/* 图标 */
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a:link,a:visited,a:active{
+  text-decoration: none;
+  color: #333;
+}
+*{
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* topnav */
+.top{
+  height: 60px;
+  padding: 10px;
+  background-color: #24292e;
+  line-height: 1;
+}
+.logo{
+  float: left;
+  display: block;
+  font-size: 40px;
+  color: rgba(255,255,255,0.75) !important;
+}
+.topnav{
+  float: right;
+}
+.topnav i,
+.topnav span{
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  line-height: 40px;
+}
+.topnav i{
+  margin-right: 10px;  
+}
+.topnav span{
+  margin-right: 20px;
+}
+@media all and (max-width: 640px) {
+  .logo{
+    display: none;
+  }
+  .topnav{
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .topnav i{
+    font-size: 40px;
+  }
+  .topnav span{
+    display: none;
+  }
+}
