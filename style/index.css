@@ -8,7 +8,7 @@
   url('iconfont.svg#iconfont') format('svg');
 }
 
-.iconfont {
+.iconfont, :after {
   font-family:"iconfont" !important;
   font-size:16px;
   font-style:normal;
@@ -23,10 +23,19 @@ a:link,a:visited,a:active{
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+i{
+  font-style: normal;
+}
+#container{
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
 /* topnav */
 .top{
   height: 60px;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #24292e;
   line-height: 1;
 }
@@ -51,26 +60,63 @@ a:link,a:visited,a:active{
 .topnav span{
   margin-right: 20px;
 }
-@media all and (max-width: 640px) {
-  .logo{
-    display: none;
-  }
+/* moblie */
+#mob-nav{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  overflow: auto;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+#mob-more{
+  display: none;
+  float: right;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 26px;
+  cursor: pointer;
+}
+#mob-close{
+  position: absolute;
+  right: 20px;
+  top: 0;
+  font-size: 26px;
+  line-height: 40px;
+  cursor: pointer;
+}
+#mob-nav a{
+  display: block;
+  position: relative;
+  height: 40px;
+  padding-left: 20px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+  color: #24292e;
+}
+#mob-nav a:after{
+  content: '\e602';
+  position: absolute;
+  right: 20px;
+}
+#mob-nav span{
+  margin-left: 10px;
+}
+@media all and (max-width: 810px){
   .topnav{
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
-  .topnav i{
-    font-size: 40px;
-  }
-  .topnav span{
     display: none;
+  }
+  #mob-more{
+    display: block;
+  }
+  #container.change{
+    left: -100%;
+  }
+  #mob-nav.change{
+    right: 0;
   }
 }
