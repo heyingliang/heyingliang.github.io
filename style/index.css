@@ -48,11 +48,14 @@ i{
 .topnav{
   float: right;
 }
-.topnav i,
-.topnav span{
+
+.topnav a{
   color: rgba(255,255,255,0.75);
   font-size: 16px;
   line-height: 40px;
+}
+.topnav a:hover{
+  color: #fff;
 }
 .topnav i{
   margin-right: 10px;  
