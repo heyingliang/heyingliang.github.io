@@ -98,10 +98,6 @@ h1 img{
     body{
         overflow-y: auto;
     }
-    #css:target{
-        -webkit-transition: all 0.5s;
-        transition: all 0.5s;
-    }
     .view{
         width: 100%;
     }

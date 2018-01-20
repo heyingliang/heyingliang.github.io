@@ -24,9 +24,11 @@ window.onload = function(){
         sc.type = "text/javascript";
         sc.textContent = "//<![CDATA[\n" + ejs.getValue() + "\n//]]> ";
         /*添加到iframe*/
+        ifram.body.innerHTML = ehtm.getValue();
         ifram.getElementsByTagName('head')[0].appendChild(style);
         ifram.getElementsByTagName('head')[0].appendChild(sc);
-        ifram.body.innerHTML = ehtm.getValue();
+        window.frames['result'].eval(ejs.getValue());
+        
         res.style.display = "none";
     };
 };
