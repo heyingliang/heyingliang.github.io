@@ -60,7 +60,7 @@ h1 img{
 }
 .edit{
     position: relative;
-    height: calc(33.3% - 0.5px);
+    height: calc(33.3vh - 60.5px);
     padding-top: 24px;
 }
 .wc-line{
