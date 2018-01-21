@@ -1,4 +1,12 @@
 window.onload = function(){
+    /*手机端的处理*/
+    if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i)){
+        var vh = window.screen.availHeight;
+        Array.prototype.forEach.call(document.querySelectorAll(".view"),function(node,index){
+            // console.log({node:node,index:index,vh:vh});
+            node.style.height = (vh - 60) + "px";
+        });
+    }
     /*编辑器初始化*/
     var ehtm = ace.edit("html");
     var ecss = ace.edit("css");
