@@ -32,6 +32,5 @@ window.onload = function(){
         res.style.display = "none";
     };
     document.body.onhashchange = function(){
-        document.querySelector(location.hash).;
     };
 };
