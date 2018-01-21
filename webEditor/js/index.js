@@ -31,6 +31,17 @@ window.onload = function(){
         
         res.style.display = "none";
     };
-    document.body.onhashchange = function(){
+    /*节流器*/
+    function throttle(fn, context){
+        clearTimeout(fn.tid);
+        fn.tid = setTimeout(function(){
+            fn.call(context);
+        },100);
+    }
+    var getH = function(){
+        console.log("a");
+    };
+    document.body.onresize = function(e){
+        throttle(getH);
     };
 };

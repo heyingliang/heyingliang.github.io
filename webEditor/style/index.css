@@ -40,14 +40,13 @@ h1 img{
     vertical-align: middle;
 }
 .editor{
-    position: relative;
-    height: 100%;
+    overflow-y: hidden;
 }
 .view{
     float: left;
     position: relative;
     width: calc(50% - 0.5px);
-    height: 100%;
+    height: calc(100vh - 60px);
     overflow-y: hidden;
 }
 .view h2{
@@ -60,12 +59,12 @@ h1 img{
 }
 .edit{
     position: relative;
-    height: calc(33.3vh - 60.5px);
+    height: 33.3%;
     padding-top: 24px;
 }
 .wc-line{
     float: left;
-    height: 100%;
+    height: 100vh;
     width: 1px;
     background-color: rgba(255, 255, 255, 0.75);
 }
