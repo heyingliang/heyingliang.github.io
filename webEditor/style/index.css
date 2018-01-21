@@ -46,7 +46,7 @@ h1 img{
     float: left;
     position: relative;
     width: calc(50% - 0.5px);
-    height: calc(100vh - 60px);
+    height: calc(100vmax - 60px);
     overflow-y: hidden;
 }
 .view h2{
