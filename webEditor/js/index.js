@@ -21,17 +21,17 @@ window.onload = function(){
         /*配置内容*/
         style.type = "text/css";
         style.textContent = "\nbody{\nbackground-color: #fff;\n}" + ecss.getValue();
-        sc.type = "text/javascript";
-        sc.textContent = "//<![CDATA[\n" + ejs.getValue() + "\n//]]> ";
+        // sc.type = "text/javascript";
+        // sc.textContent = "//<![CDATA[\n" + ejs.getValue() + "\n//]]> ";
         /*添加到iframe*/
         ifram.body.innerHTML = ehtm.getValue();
         ifram.getElementsByTagName('head')[0].appendChild(style);
-        ifram.getElementsByTagName('head')[0].appendChild(sc);
+        // ifram.getElementsByTagName('head')[0].appendChild(sc);
         window.frames['result'].eval(ejs.getValue());
         
         res.style.display = "none";
     };
     document.body.onhashchange = function(){
-        document.querySelector(location.hash+" .ace_text-input").focus();
+        document.querySelector(location.hash).;
     };
 };

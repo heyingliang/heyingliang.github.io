@@ -101,9 +101,9 @@ h1 img{
     .view{
         width: 100%;
     }
-    .editor{
+    /* .editor{
         height: 280vh;
-    }
+    } */
     .wc-line{
         width: 100%;
         height: 1px;
