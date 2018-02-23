@@ -265,6 +265,9 @@ ul,ol{
   float: right;
 }
 @media all and (max-width: 810px){
+    #footer{
+        padding: 50px 10px;
+    }
     .footer-copyright,
     .footer-explain{
         width: 100%;
