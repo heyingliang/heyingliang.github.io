@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="description" content="何莹亮的博客" />
+  <meta name="description" content="何莹亮的个人博客，何莹亮的技术作品，何莹亮的技术成长" />
+  <meta name="keywords" content="何莹亮,个人博客,个人网站,首页,web前端,JavaScript,css,html" />
+  <meta name="author" content="何莹亮" />
+  <title>何莹亮的博客-博客搭建之博客伊始</title>
+  <link rel="stylesheet" type="text/css" href="/lib/styles/public.css">
+  
+  <link rel="stylesheet" type="text/css" href="/lib/styles/post.css">
+  
+
+</head>
+<body>
+    <section id="container">
+    	    <header class="top">
+        <a href="/" class="logo">何处青山</a>
+        <nav class="topnav">
+        
+            <a href="/" class=""><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class=""><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="on"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class=""><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class=""><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class=""><i class="icons icon-about"></i><span>关于我</span></a>
+        
+        </nav>
+        <span id="mob-more" class="icons icon-more"></span>
+    </header>
+        <article class="archive">
+    <div class="content">
+    	<h2 id="第一步：明确需求"><a href="#第一步：明确需求" class="headerlink" title="第一步：明确需求"></a>第一步：明确需求</h2><blockquote>
+<p>首先，我是程序员一枚，搭建博客也就是记录一下自己的学习经历，心得体会，遇到的一些Bug，还有就是存放平时做的一些小项目。建立博客的目的不是纯粹地为了写文章，在选择搭建工具的时候纠结了很久，一开始是想要用wordpress的，这个工具一开始也是为了博客搭建而生，但现在“壮大”了，成为了一个内容管理系统（CMS）。<br>本着货比三家的心态，又对其他的一些像PHPCMS V9，帝国CMS等工具进行了简单的了解，一番精挑细选最终敲定，hexo！就是它了。<br>选择它的原因并不是想说它比其他工具优秀，我也不去评判哪个工具的好坏，只要符合自己的需求，自己用的爽就是最好的，我想要的就是一个帮助我搭建静态页的，自己可以在心情好的时候优化一下自己的博客页面，做做SEO，调整调整布局，说白了就是自己的技术实验室与档案室。</p>
+</blockquote>
+<h2 id="第二步：环境配置"><a href="#第二步：环境配置" class="headerlink" title="第二步：环境配置"></a>第二步：环境配置</h2><ol>
+<li><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">安装node.js</a> 一路点next就行（安装包包含了npm）</li>
+<li>npm安装hexo，<a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">官方中文教程</a></li>
+</ol>
+<h2 id="第三步：搭建"><a href="#第三步：搭建" class="headerlink" title="第三步：搭建"></a>第三步：搭建</h2><blockquote>
+<p>其实官网上面整个搭建过程已经说的很清楚了，我还是记录一下我搭建的不同点，首先我已经把自己的首页做好了，网站结构也已经构思好了，文件夹是这样的：</p>
+</blockquote>
+<p><img src="images/dir0.png" alt="文件夹结构"></p>
+<p>我现在要的是把我写的文章放在我的<em>share</em>文件夹下</p>
+<p>可以这样在配置：</p>
+<blockquote>
+<p>1.首先，将项目移动到hexo init生成的文件夹下–我的是<em>folder</em></p>
+</blockquote>
+<p><img src="images/dir1.png" alt="文件夹结构"></p>
+<blockquote>
+<p>2.打开<em>_config.yml</em>文件，将<em>public_dir： public</em>改成</p>
+</blockquote>
+<p><img src="images/file0.png" alt="文件字段public_dir的值"></p>
+<blockquote>
+<p><em>public_dir</em> 字段是配置解析后生成的静态文件的存放目录</p>
+</blockquote>
+<h2 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h2><blockquote>
+<p><strong>问题描述：</strong> 安装后运行<strong>hexo s</strong>没有报错，但是打开<a href="localhost:4000" target="_blank" rel="noopener">localhost:4000</a>出现白屏，未能显示页面<br><strong>问题分析：</strong> 其他应用程序占用4000端口<br><strong>解决方案：</strong><br><em>方法一：</em>先按Ctrl+C结束当前服务，执行命令<strong>hexo s -p 4001</strong>，意思就是令其在4001端口运行，     页面打开<a href="localhost:4001" target="_blank" rel="noopener">localhost:4001</a>正常显示</p>
+<p><em>方法二：</em>打开<strong>_config.yml</strong>，新增以下代码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#sever</span><br><span class="line">server: </span><br><span class="line">  port: <span class="number">4001</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>命令行运行指令<strong>hexo s</strong>页，面打开<a href="localhost:4001" target="_blank" rel="noopener">localhost:4001</a>正常显示</p>
+</blockquote>
+
+        <p style="overflow: auto;">何莹亮原创技术文章，转载请注明出处：https://heyingliang.github.io/share/2018/02/19/blogStart/</p>
+    </div>
+    <footer class="article-footer">
+        
+            <a href="/share/2018/02/19/changeTheme/" title="博客搭建之主题的更换与修改" class="article-prev">上一篇</a>
+        
+        
+    </footer>
+</article>
+<div id="toc-button" class="toc-button">目录</div>
+<aside class="aside-toc">
+<dl>
+    <dt class="toc-title">文章目录</dt>
+    <dd>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步：明确需求"><span class="toc-number">1.</span> <span class="toc-text">第一步：明确需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步：环境配置"><span class="toc-number">2.</span> <span class="toc-text">第二步：环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步：搭建"><span class="toc-number">3.</span> <span class="toc-text">第三步：搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题总结"><span class="toc-number">4.</span> <span class="toc-text">问题总结</span></a></li></ol>
+    </dd>
+</dl>
+</aside>
+<div id="art-model" class="model"></div>
+        <footer id="footer">
+    <div class="footer-copyright">
+        © 2018 <a href="https://heyingliang.github.io" target="_blank" title="何莹亮的博客">何处青山</a>
+    </div>
+    <div class="footer-explain">
+        Powered by <a href="//hexo.io">hexo</a> & Designed by <a href="//heyingliang.github.io">heyingliang</a>
+    </div>
+    <p>前端尚未统一，同学仍需努力！╮(╯▽╰)╭</p>
+</footer>
+    </section>
+        <nav id="mob-nav">
+        <div><span id="mob-close" class="icons icon-close"></span></div>
+        
+            <a href="/" class="icons"><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class="icons"><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="icons"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class="icons"><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class="icons"><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class="icons"><i class="icons icon-about"></i><span>关于我</span></a>
+        
+    </nav>
+    <script type="text/javascript" src="/lib/scripts/public.js"></script>
+</body>
+</html>
