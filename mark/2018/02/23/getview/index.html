@@ -47,6 +47,17 @@
 </blockquote>
 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>重申一遍概念，<em>viewport</em>直译为视口，也就是屏幕上网页的可视区域，网页的可视区域！！！</p>
 <p>问题来了，当我们的页面中存在可获得焦点的区域（如输入框）时，手机的虚拟键盘会被唤起，此时,我们的页面如果应用的是<em>vh</em>的单位，网页的可视区域就会变为页面顶端到虚拟键盘顶端的高度，也就是说，<em>viewport</em>的高度变小了，这TM就尴尬了，页面布局会跟着缩小，缩小啊~~~</p>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>既然是因为视口的变动而引起布局的变化，那么我们何不让其在视口变动之前将布局定下来。</p>
+<p>思路：</p>
+<blockquote>
+<p>在视口右下角新增一个宽高皆为零的元素<br>获得新增元素距离左边和顶边边界的距离，从而得出<em>vw</em>、<em>vh</em><br>移除该元素</p>
+</blockquote>
+<p>代码实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> viewport = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> point = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">	point.style.cssText = <span class="string">"position:fixed;width:0;height:0;right:0;bottom:0;"</span>;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(point);</span><br><span class="line">	<span class="keyword">var</span> vh = point.offsetTop + point.parentNode.offsetTop;</span><br><span class="line">	<span class="keyword">var</span> vw = point.offsetLeft + point.parentNode.offsetLeft;</span><br><span class="line">	<span class="built_in">document</span>.body.removeChild(point);</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		vh: vh,</span><br><span class="line">		vw: vw,</span><br><span class="line">		vmax: (vh &gt; vw ? vh : vw),</span><br><span class="line">		vmin: (vh &gt; vw ? vw : vh)</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>数据获取方式：</p>
+<blockquote>
+<p><em>viewport.vw</em> 视口宽度(整数数值)<br><em>viewport.vh</em> 视口高度(整数数值)<br><em>viewport.vmax</em> 相对于视口的宽度或高度中较大的那个(整数数值)<br><em>viewport.vmin</em> 相对于视口的宽度或高度中较小的那个(整数数值)</p>
+</blockquote>
 
         <p style="overflow: auto;">何莹亮原创技术文章，转载请注明出处：https://heyingliang.github.io/mark/2018/02/23/getview/</p>
     </div>
@@ -62,7 +73,7 @@
 <dl>
     <dt class="toc-title">文章目录</dt>
     <dd>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相关知识"><span class="toc-number">1.</span> <span class="toc-text">相关知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#起因"><span class="toc-number">2.</span> <span class="toc-text">起因</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#相关知识"><span class="toc-number">1.</span> <span class="toc-text">相关知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#起因"><span class="toc-number">2.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决思路"><span class="toc-number">3.</span> <span class="toc-text">解决思路</span></a></li></ol>
     </dd>
 </dl>
 </aside>
