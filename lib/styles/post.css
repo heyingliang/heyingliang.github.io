@@ -92,10 +92,10 @@
 }
 /* article1 */
 .content {
-  overflow-y: hidden;
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 20px;
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 .content h1 {
   font-size: 28px;
