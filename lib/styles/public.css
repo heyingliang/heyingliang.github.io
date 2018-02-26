@@ -213,6 +213,9 @@ ul,ol{
   max-width: 360px;
   margin-top: 26px;
 }
+.list:nth-child(2n+1){
+  clear: left;
+}
 .list:nth-child(2n){
   float: right;
 }

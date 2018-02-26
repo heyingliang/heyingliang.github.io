@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="description" content="何莹亮的博客" />
+  <meta name="description" content="何莹亮的个人博客，何莹亮的技术作品，何莹亮的技术成长" />
+  <meta name="keywords" content="何莹亮,个人博客,个人网站,首页,web前端,JavaScript,css,html" />
+  <meta name="author" content="何莹亮" />
+  <title>何莹亮的博客-CSS的各种水平垂直居中</title>
+  <link rel="stylesheet" type="text/css" href="/lib/styles/public.css">
+  
+  <link rel="stylesheet" type="text/css" href="/lib/styles/post.css">
+  
+
+</head>
+<body>
+    <section id="container">
+    	    <header class="top">
+        <a href="/" class="logo">何处青山</a>
+        <nav class="topnav">
+        
+            <a href="/" class=""><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class=""><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class=""><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class="on"><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class=""><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class=""><i class="icons icon-about"></i><span>关于我</span></a>
+        
+        </nav>
+        <span id="mob-more" class="icons icon-more"></span>
+    </header>
+        <article class="archive">
+    <div class="content">
+    	<h2 id="line-height实现"><a href="#line-height实现" class="headerlink" title="line-height实现"></a>line-height实现</h2><p><em>原理</em></p>
+<blockquote>
+<p><em>inline-block</em>对外表现为行内元素，对内表现为块级元素。<br><em>line-height</em>可使块级元素中的行内元素垂直居中<br><em>text-align</em>可设置块级元素中的行内元素水平对齐方式</p>
+</blockquote>
+<p><em>优点</em></p>
+<blockquote>
+<p>兼容性好</p>
+</blockquote>
+<p><em>缺点</em></p>
+<blockquote>
+<p>父元素高度要确定<br><em>line-height</em>、<em>text-align</em>会被其他兄弟元素继承</p>
+</blockquote>
+<p><a href="lineheight.html">查看演示</a></p>
+<h2 id="transform实现"><a href="#transform实现" class="headerlink" title="transform实现"></a>transform实现</h2><p><em>原理</em></p>
+<blockquote>
+<p>使用固定或绝对定位会使元素脱离文档流。<br><em>transform</em>属性的值为百分比时，其计算时以自身为基准。</p>
+</blockquote>
+<p><em>优点</em></p>
+<blockquote>
+<p>可实现宽高未知或可变元素的垂直水平居中。</p>
+</blockquote>
+<p><em>缺点</em></p>
+<blockquote>
+<p><em>transform</em>为css3的属性，IE8以下不兼容。<br>要写css前缀。</p>
+</blockquote>
+<p><a href="transform.html">查看演示</a></p>
+<h2 id="负margin实现"><a href="#负margin实现" class="headerlink" title="负margin实现"></a>负margin实现</h2><p><em>原理</em></p>
+<blockquote>
+<p>使用固定或绝对定位会使元素脱离文档流。<br><em>margin</em>设置为负值时，元素会相对于当前位置向指定位置偏移。</p>
+</blockquote>
+<p><em>优点</em></p>
+<blockquote>
+<p>兼容性好。<br>流行（额，如果这也算的话）。</p>
+</blockquote>
+<p><em>缺点</em></p>
+<blockquote>
+<p>目标元素宽高都要确定。<br>需要计算margin的取值。</p>
+</blockquote>
+<p><a href="margin.html">查看演示</a></p>
+<h2 id="自适应margin实现"><a href="#自适应margin实现" class="headerlink" title="自适应margin实现"></a>自适应margin实现</h2><p><em>原理</em></p>
+<blockquote>
+<p>超脱世界之外，不在五行之中。</p>
+</blockquote>
+<p><em>优点</em></p>
+<blockquote>
+<p>兼容较好。<br>可实现宽高未知或可变元素的垂直水平居中。</p>
+</blockquote>
+<p><em>缺点</em></p>
+<blockquote>
+<p>已经逆天了(⊙o⊙)。</p>
+</blockquote>
+<p><a href="automargin.html">查看演示</a></p>
+<h2 id="flexbox实现"><a href="#flexbox实现" class="headerlink" title="flexbox实现"></a>flexbox实现</h2><p><em>原理</em></p>
+<blockquote>
+<p>新的布局理念,弹性布局。</p>
+</blockquote>
+<p><em>优点</em></p>
+<blockquote>
+<p>方便直观，快捷干净。</p>
+</blockquote>
+<p><em>缺点</em></p>
+<blockquote>
+<p>兼容性差。<br>要写<em>-webkit-</em>前缀。<br>float、clear和vertical-align属性将失效。</p>
+</blockquote>
+<p><a href="flex.html">查看演示</a></p>
+<h2 id="css-table实现"><a href="#css-table实现" class="headerlink" title="css table实现"></a>css table实现</h2><p><em>原理</em></p>
+<blockquote>
+<p>使用css可将布局定义为远古的<em>table</em>布局方式，但又避免了该布局的弊端。<br><em>inline-block</em>对外表现为行内元素，对内表现为块级元素。<br><em>text-align</em>可设置块级元素中的行内元素水平对齐方式</p>
+</blockquote>
+<p><em>优点</em></p>
+<blockquote>
+<p>兼容性较好。</p>
+</blockquote>
+<p><em>缺点</em></p>
+<blockquote>
+<p><em>text-align</em>会被其他兄弟元素继承</p>
+</blockquote>
+<p><a href="csstable.html">查看演示</a></p>
+
+        <p style="overflow: auto;">何莹亮原创技术文章，转载请注明出处：https://heyingliang.github.io/mark/2018/02/26/vertical-center/</p>
+    </div>
+    <footer class="article-footer">
+        
+            <a href="/undefined/2018/02/26/vertical-center/lineheight/" title="" class="article-prev">上一篇</a>
+        
+        
+            <a href="/mark/2018/02/23/getview/" title="js获取viewport的width与height" class="article-next">下一篇</a>
+        
+    </footer>
+</article>
+<div id="toc-button" class="toc-button">目录</div>
+<aside class="aside-toc">
+<dl>
+    <dt class="toc-title">文章目录</dt>
+    <dd>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#line-height实现"><span class="toc-number">1.</span> <span class="toc-text">line-height实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transform实现"><span class="toc-number">2.</span> <span class="toc-text">transform实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#负margin实现"><span class="toc-number">3.</span> <span class="toc-text">负margin实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自适应margin实现"><span class="toc-number">4.</span> <span class="toc-text">自适应margin实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flexbox实现"><span class="toc-number">5.</span> <span class="toc-text">flexbox实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css-table实现"><span class="toc-number">6.</span> <span class="toc-text">css table实现</span></a></li></ol>
+    </dd>
+</dl>
+</aside>
+<div id="art-model" class="model"></div>
+        <footer id="footer">
+    <div class="footer-copyright">
+        © 2018 <a href="https://heyingliang.github.io" target="_blank" title="何莹亮的博客">何处青山</a>
+    </div>
+    <div class="footer-explain">
+        Powered by <a href="//hexo.io">hexo</a> & Designed by <a href="//github.com/heyingliang/">heyingliang</a>
+    </div>
+    <p>前端尚未统一，同学仍需努力！╮(╯▽╰)╭</p>
+</footer>
+    </section>
+        <nav id="mob-nav">
+        <div><span id="mob-close" class="icons icon-close"></span></div>
+        
+            <a href="/" class="icons"><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class="icons"><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="icons"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class="icons"><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class="icons"><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class="icons"><i class="icons icon-about"></i><span>关于我</span></a>
+        
+    </nav>
+    <script type="text/javascript" src="/lib/scripts/public.js"></script>
+</body>
+</html>

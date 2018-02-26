@@ -30,17 +30,8 @@
 //         res.style.display = "none";
 //     };
 // };
-var jsbin = {
-  'root': 'http://jsbin.com',
-  'shareRoot': 'http://jsbin.com',
-  'runner': 'http://null.jsbin.com/runner',
-  'static': 'http://static.jsbin.com',
-  'version': '4.1.2',
-  user: {"name":"heyingliang","bincount":2,"settings":{"panels":[],"editor":{},"font":14,"addons":{"closebrackets":true,"highlight":false,"vim":false,"emacs":false,"trailingspace":false,"fold":false,"sublime":false,"tern":false,"activeline":true,"matchbrackets":false},"includejs":true,"gui":{"toppanel":false}}},
-};
-
 start({
-    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width\">\n  <title>JS Bin</title>\n</head>\n<body>\n\n</body>\n</html>",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset="\"utf-8\"">\n  <meta name="\"viewport\"" content="\"width=device-width\"">\n  <title>JS Bin</title>\n</head>\n<body>\n\n</body>\n</html>",
     "css": "",
     "javascript": "",
     "url": "http://jsbin.com"
