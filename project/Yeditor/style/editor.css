@@ -1,0 +1,42 @@
+#editor{position: relative;left: 420px;width: 640px;min-height: 200px; border:1px solid #ccc;}
+#person-box{position:fixed;left:0;top:30px; width:400px;height:690px;border:1px solid #ccc;background-color:#FBFBFB;margin-left:50px;}
+@media screen and (max-width: 1440px) {
+    #person-box{margin-left:0;}
+}
+#setContent,#setSwt{
+    cursor:pointer;
+/* text */
+    text-decoration:        none;
+    font:                   24px/1em 'Droid Sans', sans-serif;
+    font-weight:            bold;
+    text-shadow:            rgba(255,255,255,.5) 0 1px 0;
+    -webkit-user-select:    none;
+    -moz-user-select:       none;
+    
+    
+/* layout */
+    padding:                .5em .6em .4em .6em;
+    margin:                 .5em;
+    display:                inline-block;
+    position:               relative;
+    border-radius:  8px;
+    
+/* effects */
+    border-top:         1px solid rgba(255,255,255,0.8);
+    border-bottom:      1px solid rgba(0,0,0,0.1);
+    
+    background-image:   -webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) ));
+    
+    transition:         background .2s ease-in-out;
+    
+/* color */
+    color:              hsl(0, 0%, 40%) !important;
+    background-color:   hsl(0, 0%, 75%);
+    box-shadow:         inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+                        hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px, /* color border */
+                        rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+    
+}
+/*ui*/
+#pui1{position: absolute;width: 300px;height: 60px;box-shadow: 1px 1px 6px #ccc;border-radius: 10px;background:#fff;z-index:3000;font-size: 12px;}
+#pui1 span{display: inline-block;padding: 0 10px;height: 30px;border: 1px solid #666;border-radius: 4px;margin:10px 6px;text-align: center;line-height: 26px;cursor: pointer;}
