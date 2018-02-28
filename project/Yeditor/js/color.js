@@ -1,4 +1,4 @@
-﻿/***
+/***
 	name:Men MaoJia
 	qq:273142650
 	Download by http://www.NewXing.com
@@ -7,7 +7,7 @@
 ***/
 (function (){
 	var divInnerHtml = '<div style="width:255px;height:255px;margin:12px 0 0 10px;_margin:12px 0 0 5px;float:left"><div style="width:255px;height:255px;background:#ff0000;"><div style="width:255px;height:255px;background:url(images/masks.png);cursor:default;" onmousedown="Jcolor().palette(this)"><div style="width:12px;height:12px;border: 1px solid #000;    border-radius: 50%;box-shadow: 0 0 0 1px #fff inset;position:absolute;top:5px;left:4px;"></div></div></div></div><div style="width:20px;height:255px;background:url(images/rolling.png);float:left;margin:12px 0 0 8px;cursor:default;" onmousedown="Jcolor().rolling(this)"><div style="width:26px;height:2px;border:2px solid #fff;position:absolute;top:9px;left:268px;"></div></div>';
-	var colorDiv = '<div style="width:380px;height:284px;background:#999;box-shadow: 2px 2px 10px #bbb;">'+divInnerHtml+'<div style="width:60px;height:auto;float:left;margin:10px 0 0 2px;font-size:12px;"><div style="width:auto;height:225px;"><table width="100%" height="100 border="0" cellpadding="0" cellspacing="5"><tr><td align="center" valign="middle">R:</td><td align="center" valign="middle"><input style="width:40px;height:14px;" type="text" value="255"/></td></tr><tr><td align="center" valign="middle">G:</td><td align="center" valign="middle"><input  style="width:40px;height:14px;" type="text" value="255"/></td></tr><tr><td align="center" valign="middle">B:</td><td align="center" valign="middle"><input style="width:40px;height:14px;" type="text" value="255"/></td></tr><tr><td></td><td style="border:solid 1px #000;background:#fff;height:40px;"></td></tr><tr><td></td><td><input type="text" style="width:50px;" value="#ffffff"/></td></tr></table></div><div style="width:60px;height:30px;margin-left:3px;cursor:pointer;border-radius: 14px;border: 1px solid #666;font-size:16px;line-height:30px;text-align:center;" onclick="Jcolor().Ru();toColor();">确定</div></div></div>';
+	var colorDiv = '<div style="width:380px;height:284px;background:#999;box-shadow: 2px 2px 10px #bbb;">'+divInnerHtml+'<div style="width:60px;height:auto;float:left;margin:10px 0 0 2px;font-size:12px;"><div style="width:auto;height:225px;"><table width="100%" height="100 border=" 0"="" cellpadding="0" cellspacing="5"><tr><td align="center" valign="middle">R:</td><td align="center" valign="middle"><input style="width:40px;height:14px;" type="text" value="255"></td></tr><tr><td align="center" valign="middle">G:</td><td align="center" valign="middle"><input style="width:40px;height:14px;" type="text" value="255"></td></tr><tr><td align="center" valign="middle">B:</td><td align="center" valign="middle"><input style="width:40px;height:14px;" type="text" value="255"></td></tr><tr><td></td><td style="border:solid 1px #000;background:#fff;height:40px;"></td></tr><tr><td></td><td><input type="text" style="width:50px;" value="#ffffff"></td></tr></table></div><div style="width:60px;height:30px;margin-left:3px;cursor:pointer;border-radius: 14px;border: 1px solid #666;font-size:16px;line-height:30px;text-align:center;" onclick="Jcolor().Ru();toColor();">确定</div></div></div>';
 	var ID = 'Jcolor';
 	var R = 255;
 	var G = 255;
@@ -141,16 +141,12 @@
 			g = document.getElementById( ID ).getElementsByTagName('input')[1];
 			b = document.getElementById( ID ).getElementsByTagName('input')[2];
 			is = (Ma-Mi)/42.5;
-			if ( Y >= 0 && Y <= 43 ) {
-				mr = 255;
-				mg = 0;
-				mb = Y * 6 > 255 ? 255 : Y * 6;
+			if ( Y >= 0 && Y <= 6="" 43="" )="" {="" mr="255;" mg="0;" mb="Y" *=""> 255 ? 255 : Y * 6;
 				nr = Ma;
 				ng = Mi;
 				nb = Y * is + Mi > Ma ? Ma : parseInt( Y * is + Mi );
 				Ct = 'R';
-			} else if ( Y >= 43 && Y <= 86 ) {
-				mr = 255 - ( ( Y - 43 ) * 6 > 255 ? 255 : ( Y - 43 ) * 6 );
+			} else if ( Y >= 43 && Y <= 6="" 43="" 86="" )="" {="" mr="255" -="" (="" y="" *=""> 255 ? 255 : ( Y - 43 ) * 6 );
 				mg = 0;
 				mb = 255;
 				nr = Ma - (( Y - 43 ) * is > Ma ?  Ma : parseInt( ( Y - 43 ) * is ) );
@@ -158,25 +154,19 @@
 				ng = Mi;
 				nb = Ma;
 				Ct = 'B';
-			} else if ( Y >= 86 && Y <= 129 ) {
-				mr = 0;
-				mg = ( ( Y - 86 ) * 6 > 255 ? 255 : ( Y - 86 ) * 6 );
+			} else if ( Y >= 86 && Y <= 6="" 86="" 129="" )="" {="" mr="0;" mg="(" (="" y="" -="" *=""> 255 ? 255 : ( Y - 86 ) * 6 );
 				mb = 255;
 				nr = Mi;
 				ng = ( ( Y - 86 ) * is + Mi > Ma ? Ma : parseInt( ( Y - 86 ) * is + Mi ) );
 				nb = Ma;
 				Ct = 'B';
-			} else if ( Y >= 129 && Y <= 172 ) {
-				mr = 0;
-				mg = 255;
-				mb = 255 - ( ( Y - 129 ) * 6 > 255 ? 255 : ( Y - 129 ) * 6 );
+			} else if ( Y >= 129 && Y <= 6="" 129="" 172="" )="" {="" mr="0;" mg="255;" mb="255" -="" (="" y="" *=""> 255 ? 255 : ( Y - 129 ) * 6 );
 				nr = Mi;
 				ng = Ma;
 				nb = Ma - ( ( Y - 129 ) * is > Ma ? Ma : parseInt( ( Y - 129 ) * is ) );
 				nb < Mi ? nb = Mi : '';
 				Ct = 'G';
-			} else if ( Y >= 172 && Y <= 215 ) {
-				mr = ( ( Y - 172 ) * 6 > 255 ? 255 : ( Y - 172 ) * 6 );
+			} else if ( Y >= 172 && Y <= 6="" 172="" 215="" )="" {="" mr="(" (="" y="" -="" *=""> 255 ? 255 : ( Y - 172 ) * 6 );
 				mg = 255;
 				mb = 0;
 				nr = ( ( Y - 172 ) * is + Mi > Ma ? Ma : parseInt( ( Y - 172 ) * is + Mi ) );
@@ -278,4 +268,4 @@
 			return divTop + ',' + divLeft;
 		}
 	}
-})();
+})();</=></=></=></=></=>

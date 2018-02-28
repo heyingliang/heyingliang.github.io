@@ -46,7 +46,7 @@ function addUI(){
 	pui.innerHTML = '<span id="pui_del">删除模块</span><span id="pui_before">模块前空行</span><span id="pui_after">模块后空行</span>';
 	edui.appendChild(pui);
 }
-ajaxGet('title');
+ajaxGet('1');
 // 列表切换
 YL('#nav span').navSwitch('','',function(e){
 	ajaxGet(e.getAttribute('data-mid'));
@@ -55,7 +55,7 @@ var nowColor = null;//当前颜色
 
 function ajaxGet(data){
 	var xmlHttp = new XMLHttpRequest();
-	var url = 'control/'+data+'.html';
+	var url = 'php/personal.php?mid='+data;
 	xmlHttp.onreadystatechange = function(){
 		if (xmlHttp.readyState==4&&xmlHttp.status==200) {
 			document.getElementById('contain').innerHTML = xmlHttp.responseText;
@@ -98,12 +98,12 @@ function UIfn(){
 			};
 			insertbtn.onclick = function(){
 				var node = document.createElement('p');
-				node.innerHTML = '<br />';
+				node.innerHTML = '<br>';
 				model.parentNode.insertBefore(node,model);
 			};
 			beforebtn.onclick = function(){
 				var node = document.createElement('p');
-				node.innerHTML = '<br />';
+				node.innerHTML = '<br>';
 				if(model.nextSibling){
 					model.parentNode.insertBefore(node,model.nextSibling);
 				}else{
