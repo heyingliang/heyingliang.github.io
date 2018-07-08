@@ -7,8 +7,10 @@
   <meta name="description" content="何莹亮的个人博客，何莹亮的技术作品，何莹亮的技术成长" />
   <meta name="keywords" content="何莹亮,个人博客,个人网站,首页,web前端,JavaScript,css,html" />
   <meta name="author" content="何莹亮" />
-  <title>何莹亮的博客</title>
+  <title>何莹亮的博客-module</title>
   <link rel="stylesheet" type="text/css" href="/lib/styles/public.css">
+  
+  <link rel="stylesheet" type="text/css" href="/lib/styles/post.css">
   
 
 </head>
@@ -18,13 +20,13 @@
         <a href="/" class="logo">何处青山</a>
         <nav class="topnav">
         
-            <a href="/" class="on"><i class="icons icon-home"></i><span>首页</span></a>
+            <a href="/" class=""><i class="icons icon-home"></i><span>首页</span></a>
         
             <a href="/project/" class=""><i class="icons icon-project"></i><span>我的项目</span></a>
         
             <a href="/share/" class=""><i class="icons icon-share"></i><span>技术分享</span></a>
         
-            <a href="/mark/" class=""><i class="icons icon-mark"></i><span>我的足迹</span></a>
+            <a href="/mark/" class="on"><i class="icons icon-mark"></i><span>我的足迹</span></a>
         
             <a href="/debug/" class=""><i class="icons icon-debug"></i><span>Debug</span></a>
         
@@ -33,62 +35,41 @@
         </nav>
         <span id="mob-more" class="icons icon-more"></span>
     </header>
+        <article class="archive">
+    <div class="content">
+    	<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p><strong>绝对路径</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'D:\project\blog\request.js'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>相对路径</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;./request.js&apos;);</span><br></pre></td></tr></table></figure>
+<h2 id="查找机制"><a href="#查找机制" class="headerlink" title="查找机制"></a>查找机制</h2><ol>
+<li>按照加载模块的文件名称进行查找</li>
+<li>在模块文件后加上<em>.js</em>后缀-&gt;查找</li>
+<li>在模块文件后加上<em>.json</em>后缀-&gt;查找</li>
+<li>在模块文件后加上<em>.node</em>后缀-&gt;查找</li>
+<li>报错</li>
+</ol>
+
+        <p style="overflow: auto;">何莹亮原创技术文章，转载请注明出处：https://heyingliang.github.io/mark/2018/04/09/module/</p>
+    </div>
+    <footer class="article-footer">
         
-<article class="main">
-
-    <div class="list">
-        <h2><span>Blog</span></h2>
-        <ul>
-            
-            <li><a href="share/2018/02/19/blogStart/">博客搭建之博客伊始</a></li>        
-            
-            <li><a href="share/2018/02/19/changeTheme/">博客搭建之主题的更换与修改</a></li>        
-            
-            <li><a href="share/2018/02/19/makeTeme/">博客搭建之主题制作</a></li>        
-            
-        </ul>
-    </div>
-
-    <div class="list">
-        <h2><span>组件</span></h2>
-        <ul>
-            
-            <li><a href="share/2018/07/09/limitText/">工具类之输入框字数限制</a></li>        
-            
-        </ul>
-    </div>
-
-    <div class="list">
-        <h2><span>node</span></h2>
-        <ul>
-            
-            <li><a href="mark/2018/04/09/module/">module</a></li>        
-            
-        </ul>
-    </div>
-
-    <div class="list">
-        <h2><span>奇思妙想</span></h2>
-        <ul>
-            
-            <li><a href="mark/2018/02/23/getview/">获取viewport的width与height</a></li>        
-            
-        </ul>
-    </div>
-
-    <div class="list">
-        <h2><span>CSS</span></h2>
-        <ul>
-            
-            <li><a href="mark/2018/02/28/text-overflow/">text-overflow</a></li>        
-            
-            <li><a href="mark/2018/02/26/vertical-center/">CSS的各种水平垂直居中</a></li>        
-            
-        </ul>
-    </div>
-
+            <a href="/share/2018/07/09/limitText/" title="工具类之输入框字数限制" class="article-prev">上一篇</a>
+        
+        
+            <a href="/mark/2018/02/28/text-overflow/" title="text-overflow" class="article-next">下一篇</a>
+        
+    </footer>
 </article>
-
+<div id="toc-button" class="toc-button">目录</div>
+<aside class="aside-toc">
+<dl>
+    <dt class="toc-title">文章目录</dt>
+    <dd>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方式"><span class="toc-number">1.</span> <span class="toc-text">使用方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找机制"><span class="toc-number">2.</span> <span class="toc-text">查找机制</span></a></li></ol>
+    </dd>
+</dl>
+</aside>
+<div id="art-model" class="model"></div>
         <footer id="footer">
     <div class="footer-copyright">
         © 2018 <a href="https://heyingliang.github.io" target="_blank" title="何莹亮的博客">何处青山</a>

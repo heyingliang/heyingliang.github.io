@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="description" content="何莹亮的博客" />
+  <meta name="description" content="何莹亮的个人博客，何莹亮的技术作品，何莹亮的技术成长" />
+  <meta name="keywords" content="何莹亮,个人博客,个人网站,首页,web前端,JavaScript,css,html" />
+  <meta name="author" content="何莹亮" />
+  <title>何莹亮的博客-工具类之输入框字数限制</title>
+  <link rel="stylesheet" type="text/css" href="/lib/styles/public.css">
+  
+  <link rel="stylesheet" type="text/css" href="/lib/styles/post.css">
+  
+
+</head>
+<body>
+    <section id="container">
+    	    <header class="top">
+        <a href="/" class="logo">何处青山</a>
+        <nav class="topnav">
+        
+            <a href="/" class=""><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class=""><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="on"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class=""><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class=""><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class=""><i class="icons icon-about"></i><span>关于我</span></a>
+        
+        </nav>
+        <span id="mob-more" class="icons icon-more"></span>
+    </header>
+        <article class="archive">
+    <div class="content">
+    	<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*1.0*/</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> doms = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.limitText'</span>);</span><br><span class="line">    <span class="keyword">var</span> limitFn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> el = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> maxlength = el.getAttribute(<span class="string">'data-maxlength'</span>);</span><br><span class="line">        <span class="keyword">var</span> showclass = el.getAttribute(<span class="string">'data-limitfor'</span>);</span><br><span class="line">        <span class="keyword">var</span> showtag = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span>(el.value.length &gt; maxlength)&#123;</span><br><span class="line">            el.value = el.value.substr(<span class="number">0</span>,<span class="built_in">parseInt</span>(maxlength));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(showclass &amp;&amp; !<span class="regexp">/^\s*\s*$/</span>.test(showclass))&#123;<span class="comment">//已定义且非(空或多个空格)</span></span><br><span class="line">            showtag = <span class="built_in">document</span>.querySelector(showclass);</span><br><span class="line">        &#125;</span><br><span class="line">        showtag &amp;&amp; (showtag.innerText = el.value.length + <span class="string">'/'</span> + maxlength);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">Array</span>.prototype.forEach.call(doms,<span class="function"><span class="keyword">function</span>(<span class="params">el,index</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> maxlength = el.getAttribute(<span class="string">'data-maxlength'</span>);</span><br><span class="line">        <span class="keyword">if</span>(maxlength != <span class="literal">undefined</span> &amp;&amp; (maxlength = <span class="built_in">parseInt</span>(maxlength)) )&#123;</span><br><span class="line">            el.addEventListener(<span class="string">'compositionend'</span>, limitFn);</span><br><span class="line">            el.addEventListener(<span class="string">'blur'</span>, limitFn);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.info(<span class="string">'第 '</span> + (index + <span class="number">1</span>) + <span class="string">' 个使用了"limitText"的元素没有定义data-maxlength'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+        <p style="overflow: auto;">何莹亮原创技术文章，转载请注明出处：https://heyingliang.github.io/share/2018/07/09/limitText/</p>
+    </div>
+    <footer class="article-footer">
+        
+        
+            <a href="/mark/2018/04/09/module/" title="module" class="article-next">下一篇</a>
+        
+    </footer>
+</article>
+<div id="toc-button" class="toc-button">目录</div>
+<aside class="aside-toc">
+<dl>
+    <dt class="toc-title">文章目录</dt>
+    <dd>
+        
+    </dd>
+</dl>
+</aside>
+<div id="art-model" class="model"></div>
+        <footer id="footer">
+    <div class="footer-copyright">
+        © 2018 <a href="https://heyingliang.github.io" target="_blank" title="何莹亮的博客">何处青山</a>
+    </div>
+    <div class="footer-explain">
+        Powered by <a href="//hexo.io">hexo</a> & Designed by <a href="//github.com/heyingliang/">heyingliang</a>
+    </div>
+    <p>前端尚未统一，同学仍需努力！╮(╯▽╰)╭</p>
+</footer>
+    </section>
+        <nav id="mob-nav">
+        <div><span id="mob-close" class="icons icon-close"></span></div>
+        
+            <a href="/" class="icons"><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class="icons"><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="icons"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class="icons"><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class="icons"><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class="icons"><i class="icons icon-about"></i><span>关于我</span></a>
+        
+    </nav>
+    <script type="text/javascript" src="/lib/scripts/public.js"></script>
+</body>
+</html>
