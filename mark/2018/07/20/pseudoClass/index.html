@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="description" content="何莹亮的博客" />
+  <meta name="description" content="何莹亮的个人博客，何莹亮的技术作品，何莹亮的技术成长" />
+  <meta name="keywords" content="何莹亮,个人博客,个人网站,首页,web前端,JavaScript,css,html" />
+  <meta name="author" content="何莹亮" />
+  <title>何莹亮的博客-css伪类妙用</title>
+  <link rel="stylesheet" type="text/css" href="/lib/styles/public.css">
+  
+  <link rel="stylesheet" type="text/css" href="/lib/styles/post.css">
+  
+
+</head>
+<body>
+    <section id="container">
+    	    <header class="top">
+        <a href="/" class="logo">何处青山</a>
+        <nav class="topnav">
+        
+            <a href="/" class=""><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class=""><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class=""><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class="on"><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class=""><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class=""><i class="icons icon-about"></i><span>关于我</span></a>
+        
+        </nav>
+        <span id="mob-more" class="icons icon-more"></span>
+    </header>
+        <article class="archive">
+    <div class="content">
+    	<h2 id="伪类语法"><a href="#伪类语法" class="headerlink" title="伪类语法"></a>伪类语法</h2><blockquote>
+<p>selector:pseudo-class {property:value;}</p>
+</blockquote>
+<h2 id="常见伪类"><a href="#常见伪类" class="headerlink" title="常见伪类"></a>常见伪类</h2><p><strong>a标签上的伪类</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*未访问的链接*/</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*已访问的链接*/</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*鼠标滑过的链接*/</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*已选中(鼠标按下)的链接*/</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在CSS定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。<br>在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。</p>
+<p><strong>？为哈</strong></p>
+<blockquote>
+<p>程序是从上到下执行的（了解程序必备基础概念）</p>
+</blockquote>
+<p>通用伪类<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*第一个selector*/</span></span><br><span class="line"><span class="selector-tag">selector</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>示例</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.test</span> <span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样是有效的，可以看到第一行样式变成了红色<br>但是，当我把html改成这样<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>占据第一行<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到，第一个p标签并没有有变成红色<br>所以，关于伪类我们要这样理解：</p>
+<blockquote>
+<p>目标元素是第一个子节点样式（它是p标签且是第一个孩子）</p>
+</blockquote>
+<p>你觉得你理解了这句话的含义了，好，接下来，我再把html代码改成这样</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>占据第一行<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样我们得到的是两段文字变成了红色<br>仔细回味之前的那句话，嗯，刷新了认识，重点在于<strong>第一个子节点</strong><br>这就结束了？<br>不！不！不！我还可以把样式做一个小小的处理<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.test</span>&gt;<span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ff0000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>配上之前一样的html代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>占据第一行<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>first-child伪类的测试<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>现在又变成只有一行变红了</p>
+
+        <p style="overflow: auto;">何莹亮原创技术文章，转载请注明出处：https://heyingliang.github.io/mark/2018/07/20/pseudoClass/</p>
+    </div>
+    <footer class="article-footer">
+        
+        
+            <a href="/share/2018/07/09/limitText/" title="工具类之输入框字数限制" class="article-next">下一篇</a>
+        
+    </footer>
+</article>
+<div id="toc-button" class="toc-button">目录</div>
+<aside class="aside-toc">
+<dl>
+    <dt class="toc-title">文章目录</dt>
+    <dd>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#伪类语法"><span class="toc-number">1.</span> <span class="toc-text">伪类语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见伪类"><span class="toc-number">2.</span> <span class="toc-text">常见伪类</span></a></li></ol>
+    </dd>
+</dl>
+</aside>
+<div id="art-model" class="model"></div>
+        <footer id="footer">
+    <div class="footer-copyright">
+        © 2018 <a href="https://heyingliang.github.io" target="_blank" title="何莹亮的博客">何处青山</a>
+    </div>
+    <div class="footer-explain">
+        Powered by <a href="//hexo.io">hexo</a> & Designed by <a href="//github.com/heyingliang/">heyingliang</a>
+    </div>
+    <p>前端尚未统一，同学仍需努力！╮(╯▽╰)╭</p>
+</footer>
+    </section>
+        <nav id="mob-nav">
+        <div><span id="mob-close" class="icons icon-close"></span></div>
+        
+            <a href="/" class="icons"><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class="icons"><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="icons"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class="icons"><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class="icons"><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class="icons"><i class="icons icon-about"></i><span>关于我</span></a>
+        
+    </nav>
+    <script type="text/javascript" src="/lib/scripts/public.js"></script>
+</body>
+</html>
