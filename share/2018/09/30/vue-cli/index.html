@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="description" content="何莹亮的博客" />
+  <meta name="description" content="何莹亮的个人博客，何莹亮的技术作品，何莹亮的技术成长" />
+  <meta name="keywords" content="何莹亮,个人博客,个人网站,首页,web前端,JavaScript,css,html" />
+  <meta name="author" content="何莹亮" />
+  <title>何莹亮的博客-vue-cli项目构建</title>
+  <link rel="stylesheet" type="text/css" href="/lib/styles/public.css">
+  
+  <link rel="stylesheet" type="text/css" href="/lib/styles/post.css">
+  
+
+</head>
+<body>
+    <section id="container">
+    	    <header class="top">
+        <a href="/" class="logo">何处青山</a>
+        <nav class="topnav">
+        
+            <a href="/" class=""><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class=""><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="on"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class=""><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class=""><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class=""><i class="icons icon-about"></i><span>关于我</span></a>
+        
+        </nav>
+        <span id="mob-more" class="icons icon-more"></span>
+    </header>
+        <article class="archive">
+    <div class="content">
+    	<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p><strong>环境</strong></p>
+<p><em>(node.js环境)<a href="http://nodejs.cn/download/" title="node下载" target="_blank" rel="noopener">http://nodejs.cn/download/</a></em>、<em>npm(node安装包会包含)</em></p>
+<p><strong>相关文档</strong></p>
+<p>NPM文档：<a href="https://www.npmjs.com.cn/" target="_blank" rel="noopener">https://www.npmjs.com.cn/</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><em>shift+鼠标右键</em>选择<em>在此处打开命令窗口</em>进入DOC命令窗口，依次键入如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir vuecli</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd vuecli</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli -save</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>mkdir vuecli</em> 创建一个名为vuecli的文件夹<br><em>cd vuecli</em> 打开进入vuecli文件夹<br><em>npm install vue-cli -save</em> 本地安装vue-cli</p>
+</blockquote>
+<p><img src="images/cli-install.png" alt="vue-cli安装"></p>
+<p>检测是否安装成功</p>
+<blockquote>
+<p><em>vue -V</em> 检测vue的版本</p>
+</blockquote>
+<p><img src="images/vue-v.png" alt="检测vue的版本效果图"></p>
+<h2 id="初始化一个项目"><a href="#初始化一个项目" class="headerlink" title="初始化一个项目"></a>初始化一个项目</h2><p>运行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack vuecliText</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>vue init webpack vuecliText</em> 初始化一个使用webpack为模板的名为vuecliText的项目</p>
+</blockquote>
+<p><img src="images/vue-init.png" alt="项目初始化截图"></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>依次运行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd vuecliText</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p><img src="images/run-dev.png" alt="项目运行"></p>
+<p>等待完成后打开浏览器输入<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p>
+<p><img src="images/vue-run.png" alt="项目运行效果图"></p>
+
+        <p style="overflow: auto;">何莹亮原创技术文章，转载请注明出处：https://heyingliang.github.io/share/2018/09/30/vue-cli/</p>
+    </div>
+    <footer class="article-footer">
+        
+        
+            <a href="/mark/2018/09/12/for/" title="js的几种循环" class="article-next">下一篇</a>
+        
+    </footer>
+</article>
+<div id="toc-button" class="toc-button">目录</div>
+<aside class="aside-toc">
+<dl>
+    <dt class="toc-title">文章目录</dt>
+    <dd>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化一个项目"><span class="toc-number">3.</span> <span class="toc-text">初始化一个项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行"><span class="toc-number">4.</span> <span class="toc-text">运行</span></a></li></ol>
+    </dd>
+</dl>
+</aside>
+<div id="art-model" class="model"></div>
+        <footer id="footer">
+    <div class="footer-copyright">
+        © 2018 <a href="https://heyingliang.github.io" target="_blank" title="何莹亮的博客">何处青山</a>
+    </div>
+    <div class="footer-explain">
+        Powered by <a href="//hexo.io">hexo</a> & Designed by <a href="//github.com/heyingliang/">heyingliang</a>
+    </div>
+    <p>前端尚未统一，同学仍需努力！╮(╯▽╰)╭</p>
+</footer>
+    </section>
+        <nav id="mob-nav">
+        <div><span id="mob-close" class="icons icon-close"></span></div>
+        
+            <a href="/" class="icons"><i class="icons icon-home"></i><span>首页</span></a>
+        
+            <a href="/project/" class="icons"><i class="icons icon-project"></i><span>我的项目</span></a>
+        
+            <a href="/share/" class="icons"><i class="icons icon-share"></i><span>技术分享</span></a>
+        
+            <a href="/mark/" class="icons"><i class="icons icon-mark"></i><span>我的足迹</span></a>
+        
+            <a href="/debug/" class="icons"><i class="icons icon-debug"></i><span>Debug</span></a>
+        
+            <a href="/about/" class="icons"><i class="icons icon-about"></i><span>关于我</span></a>
+        
+    </nav>
+    <script type="text/javascript" src="/lib/scripts/public.js"></script>
+</body>
+</html>
